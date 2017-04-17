@@ -132,9 +132,7 @@ public class FileHandle {
 	public InputStream read () {
 		if (type == FileType.Classpath || (type == FileType.Internal && !file().exists())
 			|| (type == FileType.Local && !file().exists())) {
-			System.err.println("FIle path: " + file.getPath());
-//			InputStream input = FileHandle.class.getResourceAsStream("/" + file.getPath().replace('\\', '/'));
-			InputStream input = FileHandle.class.getResourceAsStream("C:/Users/rwa35.LIVLT0235860/Documents/DevWorkspace/gdx/src/main/java/" + file.getPath().replace('\\', '/'));
+			InputStream input = FileHandle.class.getResourceAsStream("/" + file.getPath().replace('\\', '/'));
 			if (input == null) throw new GdxRuntimeException("File not found: " + file + " (" + type + ")");
 			return input;
 		}
